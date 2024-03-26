@@ -7,14 +7,13 @@
 	<body class="bg-gray-50">
 		<h1 class="text-3xl text-center font-semibold text-slate-600 mt-12"><%= title %></h1>
 		<p class="text-lg text-center text-slate-600 mt-4">Welcome to <%= title %></p>
-		<ul>
-			<% words.forEach(word => { %>
-				<% if(word.match(/(<(span).*>)/)) { %>
-					<li><%- word %></li>
-				<% } else { %>
-					<li><%= word %></li>
-				<% } %>
-			<% }) %>
-		</ul>
+		<% content.forEach((value, i) => { %>
+			<% if (value === 0) { %>
+				<%- include('./exception') %>
+			<% } else { %>
+			<%= 1 / value %>
+			<br />
+			<% } %>
+		<% }) %>
 	</body>
 </html>
